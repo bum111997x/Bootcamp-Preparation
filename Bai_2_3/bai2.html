@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<form>
+    <h> Caculator</h></br>
+    <input id="nhap1" type="text" value=" ">
+    <input id="nhap2" type="text" value=" ">
+    <input id="kq" type="text" value=" " disabled ></br>
+    </br>
+    <button type="button" onclick="plus()">Addition(+)</button>
+    <button type="button" onclick="minus()">Subtraction(-)</button>
+    <button type="button" onclick="multi()">Multiplication(*)</button>
+    <button type="button" onclick="division()">Division(/)</button>
+</form>
+<script>
+    function plus() {
+        let x= parseFloat(document.getElementById('nhap1').value);
+        let y= parseFloat(document.getElementById('nhap2').value);
+        kq= x+y;
+        document.getElementById('kq').value = kq;
+    }
+    function minus() {
+        let x= parseFloat(document.getElementById('nhap1').value);
+        let y= parseFloat(document.getElementById('nhap2').value);
+        kq = x-y;
+        document.getElementById('kq').value = kq;
+    }
+    function multi() {
+        let x= parseFloat(document.getElementById('nhap1').value);
+        let y= parseFloat(document.getElementById('nhap2').value);
+        kq= x*y;
+        document.getElementById('kq').value = kq;
+    }
+    function division() {
+        let x= parseFloat(document.getElementById('nhap1').value);
+        let y= parseFloat(document.getElementById('nhap2').value);
+        kq= x/y;
+        document.getElementById('kq').value = kq;
+    }
+</script>
+</body>
+</html>

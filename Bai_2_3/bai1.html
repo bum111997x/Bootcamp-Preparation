@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+<form>
+    <h>Nhap so tien can doi </h>
+    <input id="vnd" type="text" value=" ">
+    <h>From Currency</h>
+    <select id="fromcurrency">
+        <option value="1">VND</option>
+        <option value="23000">DL</option>
+    </select>
+    <h>To Currency</h>
+    <select id="tocurrency">
+        <option value="1">VND</option>
+        <option value="23000">DL</option>
+    </select>
+    <h>Ket qua : </h>
+    <input id="dl" type="text" value=" " disabled>
+
+    <button type="button" onclick="convert()">Convert</button>
+</form>
+<script>
+    function convert() {
+        let input=parseFloat(document.getElementById('vnd').value);
+        let fromcurrency = parseFloat(document.getElementById('fromcurrency').value);
+        let tocurrency = parseFloat(document.getElementById('tocurrency').value);
+        DL= (input*fromcurrency)/tocurrency;
+        document.getElementById('dl').value = DL;
+    }
+</script>
+</body>
+</html>
