@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập biến, kiểu dữ liệu, toán tử</title>
+</head>
+<body>
+<script>
+    let vatly;
+    let hoahoc;
+    let sinh;
+    vatly = prompt("Nhập điểm môn vật lý:");
+    hoahoc = prompt("Nhập điểm môn hóa học:");
+    sinh = prompt("Nhập điểm môn sinh học:");
+    let Vatly = parseInt(vatly);
+    let Hoahoc = parseInt(hoahoc);
+    let Sinh = parseInt(sinh);
+    let tb = (Vatly + Hoahoc + Sinh) /3;
+    let tong = Vatly + Hoahoc + Sinh;
+    document.write('Điểm trung bình ba môn là: ' + tb + '</br>');
+    document.write('Tổng điểm 3 môn là: ' + tong);
+</script>
+</body>
+</html>
