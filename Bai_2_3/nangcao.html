@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1px">
+
+    <tr>
+        <th colspan="5" style="height: 50px;width:200px"><input id="input" type="text" style="height: 48px; width:198px" disabled></th>
+    </tr>
+    <tr>
+        <th style="font-size: 20px">
+            <button type="button" onclick="setinput(1)" >1</button>
+        </th>
+        <th style="font-size: 20px">
+            <button type="button" onclick="setinput(2)" >2</button>
+        </th>
+        <th style="font-size: 20px">
+            <button type="button" onclick="setinput(3)" >3</button>
+        </th>
+        <th style="font-size: 20px">
+            <button type="button" onclick="setinput('+')" >+</button>
+        </th>
+        <th style="font-size: 20px">
+            <button type="button" onclick="xoa()" ><-</button>
+        </th>
+    </tr>
+    <tr>
+        <th style="font-size: 20px">
+            <button type="button" onclick="setinput(4)" >4</button>
+        </th>
+        <th style="font-size: 20px">
+            <button type="button" onclick="setinput(5)" >5</button>
+        </th>
+        <th style="font-size: 20px">
+            <button type="button" onclick="setinput(6)" >6</button>
+        </th>
+        <th style="font-size: 20px">
+            <button type="button" onclick="setinput('-')" >-</button>
+        </th>
+        <th style="font-size: 20px">
+            <button type="button" onclick="del('C')" >C</button>
+        </th>
+    </tr>
+    <tr>
+        <th style="font-size: 20px">
+            <button type="button" onclick="setinput(7)" >7</button>
+        </th>
+        <th style="font-size: 20px">
+            <button type="button" onclick="setinput(8)" >8</button>
+        </th>
+        <th style="font-size: 20px">
+            <button type="button" onclick="setinput(9)" >9</button>
+        </th>
+        <th style="font-size: 20px">
+            <button type="button" onclick="setinput('*')" >x</button>
+        </th>
+        <th style="font-size: 20px" rowspan="2" >
+            <button type="button" onclick="calculate()" >=</button>
+        </th>
+
+    </tr>
+    <tr>
+        <th colspan="2" style="font-size: 20px">
+            <button type="button" onclick="setinput(0)" >0</button>
+        </th>
+        <th style="font-size: 20px">
+            <button type="button" onclick="setinput('.')" >.</button>
+        </th>
+        <th style="font-size: 20px">
+            <button type="button" onclick="setinput('/')" >/</button>
+        </th>
+    </tr>
+</table>
+</body>
+<script>
+    function setinput(value) {
+        document.getElementById('input').value +=value;
+    }
+    function calculate() {
+        let input=document.getElementById('input').value;
+        kq=eval(input);
+        document.getElementById('input').value = kq;
+    }
+    function del() {
+        let de=document.getElementById('input').value;
+        de=' ';
+        document.getElementById('input').value=  de;
+    }
+    function xoa(value) {
+        kq= document.getElementById('input').value;
+        kq= input.value.substr(0,input.value.length-1);
+        document.getElementById('input').value= kq;
+    }
+</script>
+</html>
