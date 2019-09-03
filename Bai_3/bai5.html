@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Luyện tập với toán tử</title>
 </head>
 <body>
+<fieldset>
+    <h>Bài 1:</h>
+    <input type="text" id="nhapa">
+    <input type="text" id="nhapb">
+    <button type="text" onclick="test1()">Click</button>
+    <input type="text" id="ketqua" disabled>
+</fieldset>
+</br>
+<fieldset>
+    <h>Bài 2:</h>
+    <input type="text" id="nhap">
+    <button type="text" onclick="test2()">Click</button>
+    <input type="text" id="kq" disabled>
+</fieldset>
+<script>
+    function test1() {
+        let a = parseInt(document.getElementById('nhapa').value);
+        let b = parseInt(document.getElementById('nhapb').value);
+        document.getElementById('ketqua').value = (a + b <4) ? 'Below' : 'Over';
 
+    }
+</script>
+<script>
+    function test2() {
+        let login = document.getElementById('nhap').value;
+        console.log(login);
+        document.getElementById('kq').value = (login == 'Employee') ?
+            'Hello' :
+            (login == 'Director') ?
+                'Greeting' :
+                (login == '') ?
+                    'No login':
+                    'Wrong';
+    }
+</script>
 </body>
 </html>
