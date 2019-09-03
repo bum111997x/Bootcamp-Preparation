@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra năm nhuận</title>
+</head>
+<body>
+    <legend style="color: red">Kiểm tra năm nhuận</legend></br>
+    <input type="text" id="year">
+    <button type="text" onclick="test()">Kiểm tra</button>
+    <h> Kết quả là:</h>
+    <input type="text" id="ketqua" disabled>
+<script>
+    function test() {
+        let year =parseInt(document.getElementById('year').value);
+        if (year%4==0){
+            if (year%100==0){
+                if (year%400==0){
+                    //document.write(year + ' ' + 'Là năm nhuận');
+                    //alert(year + ' ' + 'Là năm nhuận');
+                    document.getElementById('ketqua').value = year + ' ' + 'Là năm nhuận';
+                } else {
+                   // document.write(year + ' ' + 'Không là năm nhuận');
+                    //alert(year + ' ' + 'Không là năm nhuận');
+                    document.getElementById('ketqua').value = year + ' ' + 'Không là năm nhuận';
+                }
+            }else {
+                //document.write(year + ' ' + 'Là năm nhuận');
+                //alert(year + ' ' + 'Là năm nhuận');
+                document.getElementById('ketqua').value = year + ' ' + 'Là năm nhuận';
+            }
+        }else {
+           // document.write(year + ' ' + 'Không là năm nhuận');
+            //alert(year + ' ' + 'Không là năm nhuận');
+            document.getElementById('ketqua').value = year + ' ' + 'Không là năm nhuận';
+        }
+    }
+</script>
+</body>
+</html>

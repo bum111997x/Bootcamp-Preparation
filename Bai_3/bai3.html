@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập thực hành với if else if</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <h>Tên đăng nhâp: </h>
+        </td>
+        <td>
+            <input type="text" id="nick">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h>Password:</h>
+        </td>
+        <td>
+            <input type="password" id="pass">
+        </td>
+    </tr>
+</table>
+</br>
+<button type="text" onclick="login()">Đăng nhập</button>
+<script>
+    function login() {
+        let nickname=document.getElementById('nick').value;
+        let password=document.getElementById('pass').value;
+        if (nickname == 'Admin'){
+            if (password == 'TheMaster'){
+                alert('Welcome!');
+            }else if (password == 'null'){
+                alert('Canceled');
+            }else {
+                alert('Wrong password');
+            }
+        }else if (nickname == 'null'){
+            alert('Canceled');
+        }else {
+            alert("I don't know you!");
+        }
+    }
+</script>
+
+</body>
+</html>

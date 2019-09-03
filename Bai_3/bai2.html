@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập với cấu trúc if-else</title>
+</head>
+<body>
+<legend style="color: red">What is the “official” name of JavaScript?</legend></br>
+<input type="text" id="input">
+<button type="text" onclick="ketqua()">Click!</button>
+<h>Câu trả lời : </h>
+<input type="text" id="kq" style=" row-span: inherit"100px " disabled>
+<script>
+    function ketqua() {
+        let input= document.getElementById('input').value;
+        if (input == 'ECMAScript')
+            document.getElementById('kq').value = 'Right!';
+        else
+            document.getElementById('kq').value = "You don't know? ECMAScript!";
+    }
+</script>
+</body>
+</html>
