@@ -2,9 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Thực hành sử dụng bàn phím (bài đỏ)</title>
 </head>
-<body>
-$END$
+<body onload="docReady()">
+<img id="luffy" src="luffy.jpg" style="position:absolute;left:0; top:0;" height="300" width="270"/>
+<script>
+    function docReady() {
+        window.addEventListener('keydown', onkeydown);
+    }
+    function upArrowPressed() {
+        let element = document.getElementById("luffy");
+        element.style.top = parseInt(element.style.top) - 5 + 'px';
+    }
+    function downArrowPressed() {
+        let element = document.getElementById("luffy");
+        element.style.top = parseInt(element.style.top) + 5 + 'px';
+    }
+    function rightArrowPressed() {
+        let element = document.getElementById("luffy");
+        element.style.left = parseInt(element.style.left) - 5 + 'px';
+    }
+    function leftArrowPressed() {
+        let element = document.getElementById("luffy");
+        element.style.left = parseInt(element.style.left) + 5 + 'px';
+    }
+    function onkeydown(evt) {
+
+        switch (evt.which) {
+            case 37:
+                leftArrowPressed();
+                break;
+            case 39:
+                rightArrowPressed();
+                break;
+            case 38:
+                upArrowPressed();
+                break;
+            case 40:
+                downArrowPressed();
+                break;
+        }
+    }
+
+</script>
 </body>
 </html>
