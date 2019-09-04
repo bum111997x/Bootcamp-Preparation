@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Kiểm tra a có chia hết cho b không (bài đỏ)</title>
 </head>
 <body>
-$END$
+<table>
+    <tr>
+        <td>Nhập số a</td>
+        <td><input type="text" id="nhapa"></td>
+    </tr>
+    <tr>
+        <td>Nhập số b</td>
+        <td><input type="text" id="nhapb"></td>
+    </tr>
+</table></br>
+<button type="text" onclick="kiemtra()">Kiểm tra</button>
+<input type="text" id="ketqua" disabled>
+<script>
+    function kiemtra() {
+        let a = parseFloat(document.getElementById('nhapa').value);
+        let b = parseFloat(document.getElementById('nhapb').value);
+        if ( a%b == 0)
+            document.getElementById('ketqua').value = a + " Chia hết cho " + b ;
+        else
+            document.getElementById('ketqua'),value = a + " Không chia hết cho " + b;
+    }
+</script>
 </body>
 </html>
