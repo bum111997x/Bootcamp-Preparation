@@ -2,9 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Thuc hanh</title>
 </head>
+<fieldset>
+<h1 style="color: red">Caculator </h1>
+<input id="nhap1" type="text">
+<input id="nhap2" type="text">
+<label for="ketqua"> Kết quả là: </label>
+    <input id="ketqua" type="text" disabled></br>
+</br>
+<button type="button" onclick="plus()">Addition(+)</button>
+<button type="button" onclick="minus()">Subtraction(-)</button>
+    <button type="button" onclick="multi()">Multiplication(x)</button>
+    <button type="button" onclick="div()">Division(/)</button>
+</fieldset>
+</br>
+<fieldset>
+    <legend style="color: blue">Quy đổi tiền tệ</legend>
+<h>Amount</h>
+    <input id="nhap" type="text">
+    <h>Fromcurrency</h>
+    <select id="Fromcurrency">
+        <option value="1">VNĐ</option>
+        <option value="23000">USD</option>
+        <option value="27000">Euro</option>
+        <option value="36000">Bảng Anh</option>
+    </select>
+    <h>ToCurrency</h>
+    <select id="tocurrency">
+        <option value="1">VNĐ</option>
+        <option value="23000">USD</option>
+        <option value="27000">Euro</option>
+        <option value="36000">Bảng Anh</option>
+    </select>
+    <input id="kq" type="text">
+    <button type="text" onclick="convert()">Convert</button>
+</fieldset>
 <body>
-$END$
+<script src="plus.js"></script>
+<script src="minus.js"></script>
+<script src="multi.js"></script>
+<script src="div.js"></script>
+<script src="convert.js"></script>
 </body>
 </html>
