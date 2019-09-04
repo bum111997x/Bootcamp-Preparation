@@ -2,9 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài tập máy tính đơn giản</title>
 </head>
 <body>
-$END$
+<table style="border: 5px solid black">
+    <tr>
+        <th colspan="4" style="height: 40px; width:300px"><input type="text" id="nhap"
+                                                                 style="height: 38px; width:299px"></th>
+    </tr>
+    <tr>
+        <th style="font-size: 40px">
+            <button type="button" onclick="setinput(1)" style="height: 30px; width: 30px">1</button>
+        </th>
+        <th style="font-size: 40px">
+            <button type="button" onclick="setinput(2)" style="height: 30px; width: 30px">2</button>
+        </th>
+        <th style="font-size: 40px">
+            <button type="button" onclick="setinput(3)" style="height: 30px; width: 30px">3</button>
+        </th>
+        <th style="font-size: 40px">
+            <button type="button" onclick="toantu('+')" style="height: 30px; width: 30px">+</button>
+        </th>
+    </tr>
+    <tr>
+        <th style="font-size: 40px">
+            <button type="button" onclick="setinput(4)" style="height: 30px; width: 30px">4</button>
+        </th>
+        <th style="font-size: 40px">
+            <button type="button" onclick="setinput(5)" style="height: 30px; width: 30px">5</button>
+        </th>
+        <th style="font-size: 40px">
+            <button type="button" onclick="setinput(6)" style="height: 30px; width: 30px">6</button>
+        </th>
+        <th style="font-size: 40px">
+            <button type="button" onclick="toantu('-')" style="height: 30px; width: 30px">-</button>
+        </th>
+    </tr>
+    <tr>
+        <th style="font-size: 40px">
+            <button type="button" onclick="setinput(7)" style="height: 30px; width: 30px">7</button>
+        </th>
+        <th style="font-size: 40px">
+            <button type="button" onclick="setinput(8)" style="height: 30px; width: 30px">8</button>
+        </th>
+        <th style="font-size: 40px">
+            <button type="button" onclick="setinput(9)" style="height: 30px; width: 30px">9</button>
+        </th>
+        <th style="font-size: 40px">
+            <button type="button" onclick="toantu('*')" style="height: 30px; width: 30px">x</button>
+        </th>
+    </tr>
+    <tr>
+        <th style="font-size: 40px">
+            <button type="button" onclick="del()" style="height: 30px; width: 30px">C</button>
+        </th>
+        <th style="font-size: 40px">
+            <button type="button" onclick="setinput(0)" style="height: 30px; width: 30px">0</button>
+        </th>
+        <th style="font-size: 40px">
+            <button type="button" onclick="calculate()" style="height: 30px; width: 30px">=</button>
+        </th>
+        <th style="font-size: 40px">
+            <button type="button" onclick="toantu('/')" style="height: 30px; width: 30px">/</button>
+        </th>
+    </tr>
+</table>
+<script>
+    let num1 = null;
+    let num2 = null;
+    let operation = '';
+    let result = '';
+    let input = document.getElementById('nhap');
+    function del() {
+        let de = document.getElementById('nhap').value;
+        de = null;
+        document.getElementById('nhap').value = de;
+    }
+
+    function setinput(value) {
+        result = input.value;
+        result += value;
+        document.getElementById('nhap').value = result;
+    }
+    function toantu(c) {
+        num1 = Number(result);
+        document.getElementById('nhap').value="";
+        operation = c;
+    }
+    function calculate() {
+        num2 = Number(result);
+        switch (operation) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                result = num1 / num2;
+                break;
+        }
+        document.getElementById('nhap').value = result;
+    }
+</script>
+
 </body>
 </html>
