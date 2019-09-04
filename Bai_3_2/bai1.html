@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bài tập tính chỉ số cân nặng  của cơ thể</title>
 </head>
 <body>
-$END$
+<legen style="color: red; font-weight: 100px">Tính chỉ số cân nặng của cơ thể</legen></br></br>
+<h>Chỉ số cân nặng là :</h>
+<input type="text" id="cannang"></br></br>
+<h>Chỉ số chiều cao là:</h>
+<input type="text" id="chieucao"></br></br>
+<button type="text" onclick="bmi()">Kết quả</button>
+<input type="text" id="ketqua" disabled>
+<script>
+    function bmi() {
+        let nang = parseFloat(document.getElementById('cannang').value);
+        let cao = parseFloat(document.getElementById('chieucao').value);
+        a = nang/ (cao * cao);
+        if (a < 18.5) {
+            document.getElementById('ketqua').value = "Underweight";
+            //alert('Underweight')
+        }else if (a <25.0) {
+            document.getElementById('ketqua').value = 'Normal';
+        }else if (a <30.0) {
+            document.getElementById('ketqua').value = 'Overweight';
+        }else
+            document.getElementById('ketqua').value = 'Obese';
+    }
+</script>
 </body>
 </html>
