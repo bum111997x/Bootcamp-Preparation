@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Tính tổng các số từ 1 đến n khi nhập n</title>
 </head>
 <body>
-$END$
+<input type="text" id="int">
+<button type="text" onclick="total()">Tính tổng</button>
+</br>
+<div id="result"></div>
+<script>
+    function total() {
+        let num = parseInt(document.getElementById('int').value);
+        let kq = 0;
+        for (i = 1; i <= num; i++) {
+            kq = kq + i;
+        }
+        document.getElementById('result').innerText = kq;
+    }
+</script>
 </body>
 </html>
