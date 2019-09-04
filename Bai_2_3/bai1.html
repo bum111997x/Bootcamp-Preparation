@@ -9,14 +9,18 @@
     <h>Nhap so tien can doi </h>
     <input id="vnd" type="text" value=" ">
     <h>From Currency</h>
-    <select id="fromcurrency">
+    <select id="fromcurrency"  >
         <option value="1">VND</option>
         <option value="23000">DL</option>
+        <option value="27000">Euro</option>
+        <option value="36000">BangAnh</option>
     </select>
     <h>To Currency</h>
-    <select id="tocurrency">
+    <select id="tocurrency"  >
         <option value="1">VND</option>
         <option value="23000">DL</option>
+        <option value="27000">Euro</option>
+        <option value="36000">BangAnh</option>
     </select>
     <h>Ket qua : </h>
     <input id="dl" type="text" value=" " disabled>
@@ -30,6 +34,7 @@
         let tocurrency = parseFloat(document.getElementById('tocurrency').value);
         DL= (input*fromcurrency)/tocurrency;
         document.getElementById('dl').value = DL;
+        //document.write("ket qua la: " + DL );
     }
 </script>
 </body>
