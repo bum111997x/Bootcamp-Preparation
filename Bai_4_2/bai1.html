@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>[Thực hành] Sử dụng vòng lặp do-while</title>
 </head>
 <body>
-$END$
+<div id="kq"></div>
+<script>
+    let value = null;
+    do {
+        value = prompt("Nhập vào số từ 1 -> 10");
+    }while (value <1 || value >10);
+    document.getElementById('kq').innerText = "Số bạn vừa nhập là: " + value;
+</script>
 </body>
 </html>
