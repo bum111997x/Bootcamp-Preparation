@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game puzzle</title>
+</head>
+<body>
+<img id="anh1" src="luffy.jpg" alt="1" onclick="click1(this.id);check()" width="350px" height="500px"/>
+<img id="anh2" src="luffy1.jpg" alt="2" onclick="click1(this.id);check()" width="350px" height="500px"/>
+<img id="anh3" src="luffy2.jpg" alt="3" onclick="click1(this.id);check()" width="350px" height="500px"/>
+<script>
+    function click1(val) {
+        let img = document.getElementById(val);
+        switch (img.alt) {
+            case "1":
+                img.src = "luffy.jpg";
+                img.alt = "2";
+                break;
+            case "2":
+                img.src = "luffy1.jpg";
+                img.alt = "3";
+                break;
+            case "3":
+                img.src = "luffy2.jpg";
+                img.alt = "1";
+                break;
+        }
+    }
+function check() {
+    let checkIn1 = document.getElementById('anh1');
+    let checkIn2 = document.getElementById('anh2');
+    let checkIn3 = document.getElementById('anh3');
+    if (checkIn1.alt == checkIn2.alt && checkIn2.alt == checkIn3.alt && checkIn1.alt == checkIn3.alt)
+        alert("chuc mung");
+}
+</script>
+</body>
+</html>
