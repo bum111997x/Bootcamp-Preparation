@@ -2,9 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let num = prompt();
+    let dem = 0;
+
+    function checkNumber(N) {
+        if (N < 2) {
+            return false;
+        } else if (N == 2) {
+            return true;
+        } else {
+            for (let i = 2; i < (N - 1); i++) {
+                if (N % i == 0) {
+                    return false;
+                    break;
+                }
+            }
+
+        }
+        return true;
+    }
+
+    let Numbercount = 2;
+    while (dem < num) {
+        if (checkNumber(Numbercount)) {
+            dem++;
+            document.write(Numbercount + " ");
+        }
+        Numbercount++;
+    }
+</script>
 </body>
 </html>
