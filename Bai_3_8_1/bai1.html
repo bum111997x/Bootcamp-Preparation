@@ -2,9 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>game puzzle</title>
 </head>
 <body>
-$END$
+<img id="anh1" src="luffy3.jpg" alt="1" onclick="img(this.id);check(this.id)" width="498px" height="190px"><br>
+<img id="anh2" src="luffy1.jpg" alt="2" onclick="img(this.id);check(this.id)" width="498px" height="190px"><br>
+<img id="anh3" src="luffy5.jpg" alt="3" onclick="img(this.id);check(this.id)" width="498px" height="190px">
+<script>
+    function img(val) {
+        let image = document.getElementById(val);
+        switch (image.alt) {
+            case "1":
+                image.src = "luffy0.jpg";
+                image.alt = "4";
+                break;
+            case "2":
+                image.src = "luffy1.jpg";
+                image.alt = "5";
+                break;
+            case "3":
+                image.src = "luffy2.jpg";
+                image.alt = "6";
+                break;
+            case "4":
+                image.src = "luffy3.jpg";
+                image.alt = "1";
+                break;
+            case "5":
+                image.src = "luffy4.jpg";
+                image.alt = "2";
+                break;
+            case "6":
+                image.src = "luffy5.jpg";
+                image.alt = "3";
+                break;
+        }
+    }
+
+    function check() {
+        let check1 = document.getElementById('anh1');
+        let check2 = document.getElementById('anh2');
+        let check3 = document.getElementById('anh3');
+        if (check1.alt === "1" && check2.alt === "2" && check3.alt === "3" ||check1.alt === "4" && check2.alt === "5" && check3.alt === "6" ) {
+            alert('Finish!');
+        }
+    }
+</script>
 </body>
 </html>
