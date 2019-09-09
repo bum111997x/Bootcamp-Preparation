@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<div id='display'></div>
+<script>
+    let n1 = 0;
+    let n2 = 1;
+    let n3;
+    for (let i = 2;; i++) {
+        n3 = n1 + n2;
+        if (n3 % 5 == 0) {
+            document.getElementById('display').innerHTML = "Số đầu tiên trong dãy Fibonaci chia hết cho 5 là: " + n3;
+            break
+        }
+        n1 = n2;
+        n2 = n3;
+    }
+</script>
 </body>
 </html>
