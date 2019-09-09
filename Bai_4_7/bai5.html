@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<div id="display"></div>
+<script>
+    let n1 = +0;
+    let n2 = +1;
+    let n3;
+    scout = Number(n1) + Number(n2);
+    for (let i = 2;i<20; i++) {
+        n3 = n1 + n2;
+        scout = scout +n3;
+        n1 = n2;
+        n2 = n3;
+    }
+    document.getElementById('display').innerHTML = "Tổng của 20 số đầu trong dãy fibonaci là: "+ scout;
+</script>
 </body>
 </html>
