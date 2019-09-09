@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập</title>
 </head>
 <body>
-$END$
+<script>
+    let temperature = null;
+    temperature = prompt('Nhập nhiệt độ');
+    do {
+        if (temperature < 20) {
+            temperature = alert('Tăng nhiệt độ');
+            temperature = prompt('Nhập nhiệt độ');
+        } else if (temperature > 100) {
+            temperature = alert('Giảm nhiệt độ');
+            temperature = prompt('Nhập nhiệt độ');
+        }
+    }
+    while (temperature < 20 || temperature > 100) ;
+    alert("Nhiệt độ là " + temperature);
+</script>
 </body>
 </html>
