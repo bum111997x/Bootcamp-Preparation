@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Good fast cheap</title>
 </head>
 <body>
-$END$
+GOOD: <input type="checkbox" id="good" onclick="check(this.id)" name="GOOD"><br>
+FAST: <input type="checkbox" id="fast" onclick="check(this.id)" name="FAST"><br>
+CHEAP:<input type="checkbox" id="cheap" onclick="check(this.id)" name="CHEAP">
+<script>
+    function check(val) {
+        let good = document.getElementById('good');
+        let fast = document.getElementById('fast');
+        let cheap = document.getElementById('cheap');
+        if (good.checked && fast.checked)
+            cheap.checked= false;
+        if (!good.checked && fast.checked)
+            cheap.checked = true;
+        if (good.checked && !fast.checked)
+            cheap.checked = true;
+    }
+</script>
 </body>
 </html>
