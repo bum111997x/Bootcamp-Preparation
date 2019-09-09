@@ -2,9 +2,230 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Luyện tập điều kiện vòng lặp 2</title>
 </head>
 <body>
-$END$
+<fieldset>
+    <legend style="color: red">Đổi độ C sang độ F</legend>
+    <h>Nhập vào độ C:</h>
+    <input type="text" id="celsius">
+    <button onclick="check1()">Click!</button>
+    <br>
+    <div id="display"></div>
+</fieldset>
+<br>
+<fieldset>
+    <legend style="color: red">Đổi Met sang Feet</legend>
+    <h>Nhập vào m:</h>
+    <input type="text" id="met">
+    <button onclick="check2()">Click</button>
+    <div id="display1"></div>
+</fieldset>
+<br>
+<fieldset>
+    <legend style="color: red">Tính diện tích hình vuông</legend>
+    <h>Nhập vào giá trị cạnh hình vuông:</h>
+    <input type="text" id="edge">
+    <button onclick="check3()">Click</button>
+    <div id="display2"></div>
+</fieldset>
+<br>
+<fieldset>
+    <legend style="color: red">Tính diện tích hình chữ nhật</legend>
+    <table>
+        <tr>
+            <td>
+                <h>Nhập vào giá trị chiều dài:</h>
+            </td>
+            <td>
+                <input type="text" id="leng"><br></td>
+        </tr>
+        <tr>
+            <td>
+                <h>Nhập vài giá trị chiều rộng:</h>
+            </td>
+            <td>
+                <input type="text" id="width"></td>
+        </tr>
+
+    </table>
+    <br>
+    <button onclick="check4()">Click</button>
+    <br>
+    <div id="display3"></div>
+</fieldset>
+<br>
+<fieldset>
+    <legend style="color: red"> Tính diện tích tam giác vuông</legend>
+    <h>Cạnh góc vuông 1:</h>
+    <input type="text" id="edge1"><br>
+    <h>Cạnh góc vuông 2:</h>
+    <input type="text" id="edge2"><br>
+    <button onclick="check5()">Click</button>
+    <div id="display4"></div>
+</fieldset>
+<br>
+<fieldset>
+    <legend style="color: red">Giải phương trình bậc 1 có dạng ax + b =0</legend>
+    <h>Nhập vào giá trị a:</h>
+    <input type="text" id="inputA"><br>
+    <h>Nhập vào giá trị b:</h>
+    <input type="text" id="inputB"><br>
+    <button onclick="check6()">Click</button>
+    <div id="display5"></div>
+    <br>
+</fieldset>
+<br>
+<fieldset>
+    <legend style="color: red">Giải phương trình bậc 2 có dạng ax^2 + bx +c =0</legend>
+    <h>Nhập giá trị a:</h>
+    <input type="text" id="a"><br>
+    <h>Nhập giá trị b:</h>
+    <input type="text" id="b"><br>
+    <h>Nhập giá trị c:</h>
+    <input type="text" id="c"><br>
+    <button onclick="check7()">Click</button>
+    <div id="display6"></div>
+</fieldset>
+<br>
+<fieldset>
+    <legend style="color: red"> Kiểm tra xem một số nhập vào có phải là tuổi của một người không</legend>
+    <h>Nhập tuổi:</h>
+    <input type="text" id="age">
+    <button onclick="check8()">Click</button>
+    <div id="display7"></div>
+</fieldset>
+<br>
+<fieldset>
+    <legend style="color: red"> Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác</legend>
+    <h>Nhập a: </h>
+    <input type="text" id="inpA"><br>
+    <h>Nhập b: </h>
+    <input type="text" id="inpB"><br>
+    <h>Nhập c: </h>
+    <input type="text" id="inpC"><br>
+    <button onclick="check9()">Click</button>
+    <div id="display8"></div>
+</fieldset>
+<br>
+<fieldset>
+    <legend style="color: red">  Viết chương trình tính giá điện. </legend>
+
+</fieldset>
+<script>
+    function check1() {
+        let celsius = parseFloat(document.getElementById('celsius').value);
+        if (celsius) {
+            fahrenheit = celsius * 9 / 5 + 32;
+            document.getElementById('display').innerHTML = "Độ F là: " + fahrenheit;
+        } else
+            document.getElementById('display').innerHTML = " Xin mời nhập lại độ C!";
+    }
+
+    function check2() {
+        let met = parseFloat(document.getElementById('met').value);
+        if (met > 0) {
+            feet = met * 3.2808;
+            document.getElementById('display1').innerHTML = "Kết quả là: " + feet;
+        } else
+            document.getElementById('display1').innerText = "Xin mời nhập lại giá trị đúng!";
+    }
+
+    function check3() {
+        let squareEdge = parseFloat(document.getElementById('edge').value);
+        if (squareEdge > 0) {
+            S = squareEdge * squareEdge;
+            document.getElementById('display2').innerHTML = "Diện tích hình vuông là: " + S;
+        } else
+            document.getElementById('display2').innerHTML = "Xin mời nhập lại giá trị đúng!";
+    }
+
+    function check4() {
+        let lenght = parseFloat(document.getElementById('leng').value);
+        let width = parseFloat(document.getElementById('width').value);
+        //if (lenght) {
+        //if (width) {
+        //// S = lenght * width;
+        // document.getElementById('display3').innerHTML = "Diện tích hình chữ nhật là: " + S;
+        // } else
+        //document.getElementById('display3').innerHTML = "Xin mời nhập lại giá trị chiều rộng!";
+        // } else
+        //document.getElementById('display3').innerHTML = "Xin mời nhập lại giá trị chiều dài!";
+        if (lenght > 0 && width > 0) {
+            S = lenght * width;
+            document.getElementById('display3').innerHTML = "Diện tích hình chữ nhật là: " + S;
+        } else if (lenght < 1 || width < 1)
+            document.getElementById('display3').innerHTML = "Xin mời nhập lại giá trị là  một số dương!";
+        else
+            document.getElementById('display3').innerHTML = "Xin mời nhập lại giá trị đúng!";
+    }
+
+    function check5() {
+        let edge1 = parseFloat(document.getElementById('edge1').value);
+        let edge2 = parseFloat(document.getElementById('edge2').value);
+        if (edge1 > 0 && edge2 > 0) {
+            S = 1 / 2 * edge1 * edge2;
+            document.getElementById('display4').innerHTML = "Diện tích hình tam giác vuông là: " + S;
+        } else if (edge1 < 1 || edge2 < 1)
+            document.getElementById('display4').innerHTML = "Xin mời nhập lại giá trị cạnh góc vuông là giá trị dương!";
+        else
+            document.getElementById('display4').innerHTML = "Xin mời nhập lại giá trị đúng!";
+    }
+
+    function check6() {
+        let a = Number(document.getElementById('inputA').value);
+        let b = Number(document.getElementById('inputB').value);
+        if (a == 0) {
+            if (b == 0)
+                document.getElementById('display5').innerHTML = "Phương trình có vô số nghiệm!";
+            else
+                document.getElementById('display5').innerHTML = "Phương trình vô nghiệm!";
+        } else if (a != 0) {
+            x = -b / a;
+            document.getElementById('display5').innerHTML = "Phương trình có nghiệm duy nhất là: " + x;
+        }
+    }
+
+    function check7() {
+        let a = parseFloat(document.getElementById('a').value);
+        let b = parseFloat(document.getElementById('b').value);
+        let c = parseFloat(document.getElementById('c').value);
+        if (a == 0) {
+            document.getElementById('display6').innerHTML = "Xin mời nhập lại giá trị a khác 0!";
+        } else (a != 0)
+        {
+            delta = b * b - 4 * a * c;
+            if (delta < 0) {
+                document.getElementById('display6').innerHTML = "Phương trình vô nghiệm!";
+            } else if (delta == 0) {
+                document.getElementById('display6').innerHTML = "Phương trình có nghiệm kép x1=x2= " + (-b / (2 * a));
+            } else if (delta > 0) {
+                document.getElementById('display6').innerHTML = "Phương trình có 2 nghiệm phân biệt x1= " + ((-b + Math.sqrt(delta)) / (2 * a)) + " và x2= " + ((-b - Math.sqrt(delta)) / (2 * a));
+            }
+        }
+    }
+
+    function check8() {
+        let age = parseInt(document.getElementById('age').value);
+        if (age > 0 && age < 120) {
+            document.getElementById('display7').innerHTML = age + " tuổi.";
+        } else
+            document.getElementById('display7').innerHTML = "Xin mời nhập lại số tuổi!";
+    }
+
+    function check9() {
+        let a = parseFloat(document.getElementById('inpA').value);
+        let b = parseFloat(document.getElementById('inpB').value);
+        let c = parseFloat(document.getElementById('inpC').value);
+        if (a > 0 && b > 0 && c > 0) {
+            if ((a + b) > c && (b + c) > a && (c + a) > b) {
+                document.getElementById('display8').innerHTML = "Là tam giác được tạo bởi 3 cạnh " + a + "," + b + "," + c;
+            }
+        } else
+            document.getElementById('display8').innerHTML = "Không phải là tam giác!";
+    }
+
+
+</script>
 </body>
 </html>
