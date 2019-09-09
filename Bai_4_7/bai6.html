@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<div id="display" ></div>
+<script>
+    let scout = +0;
+    let count = 0;
+    for (i=0;count<=30; i++){
+        if ( i%7 ==0){
+            scout = scout +i;
+            count++;
+        }
+    }
+    document.getElementById('display').innerHTML = scout;
+</script>
 </body>
 </html>
