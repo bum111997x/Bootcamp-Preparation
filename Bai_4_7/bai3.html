@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<div id='display'></div>
+<script>
+    let numberCount = parseInt(prompt("Nhập vào số lượng số trong dãy fibonaci: "));
+    let n1=0;
+    let n2=1;
+    let n3;
+    scout= n1 + " " + n2 + " ";
+    for (let i=2; i<numberCount;i++){
+        n3 = n1 +n2;
+        scout = scout + n3 + " ";
+        n1=n2;
+        n2=n3;
+    }
+    document.getElementById('display').innerHTML = scout;
+</script>
 </body>
 </html>
