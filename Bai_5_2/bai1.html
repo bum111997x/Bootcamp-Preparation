@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu dien</title>
+</head>
+<body>
+<div id="display"></div>
+<script>
+    let search = prompt();
+    let english = ["red", "blue", "white", "black"];
+    let vietnamese = ["do", "xanh blue", "trang", "den"];
+    let result;
+    for (let i = 0; i < english.length; i++) {
+        if (english[i] === search) {
+            result = vietnamese[i];
+            document.getElementById('display').innerHTML = result;
+            break;
+        } else if (vietnamese[i] === search) {
+            result = english[i];
+            document.getElementById('display').innerHTML = result;
+            break;
+        } else {
+            document.getElementById('display').innerHTML = "Khong tim thay";
+        }
+    }
+</script>
+</body>
+</html>
