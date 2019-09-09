@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<button onclick="document.getElementById('demo').innerText= getRndInteger(min,max)">Click me</button>
+<div id="demo"></div>
+<script>
+    let min = prompt();
+    let max = prompt();
+    let num = prompt();
+    let random=0;
+    min = Math.ceil(min);
+    max = Math.floor(max);
+
+    function getRndInteger(min, max) {
+        random = Math.floor(Math.random() * (max - min + 1)) + min;
+        return random;
+    }
+
+    //function result() {
+        for (let i = 0; i < 3; i++)
+            if (random === num) {
+                alert('chuc mung');
+                break;
+            } else {
+                alert('Nhap lai');
+                num = prompt();
+            }
+    //}
+
+</script>
 </body>
 </html>
