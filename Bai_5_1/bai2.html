@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
+<div id="display"></div>
 <body>
-$END$
+<script>
+    let numInp = prompt('Nhap so');
+    let str = numInp.toString(numInp);
+    let result = [str[0]];
+    for (let i=0;i<str.length-1;i++){
+        if (str[i]%2===0){
+            result.push('-',str[i]);
+        }else
+            result.push(str[i]);
+    }
+    document.getElementById('display').innerHTML = result.join('');
+</script>
 </body>
 </html>
