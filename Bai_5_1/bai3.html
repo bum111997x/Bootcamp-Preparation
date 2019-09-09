@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<div id="display"></div>
+<script>
+    let string = prompt('');
+    let str = string.toString(string);
+    let chuhoa = str.toUpperCase();
+    let chuthuong = str.toLowerCase();
+    let result = [str[0]];
+    for (let i=0;i<str.length;i++)
+        if (chuhoa.includes(str[i])){
+            result.push(str[i].toLowerCase());
+        }else if(chuthuong.includes(str[i])){
+            result.push(str[i].toUpperCase());
+        }
+    document.getElementById('display').innerHTML = result.join("");
+</script>
 </body>
 </html>
