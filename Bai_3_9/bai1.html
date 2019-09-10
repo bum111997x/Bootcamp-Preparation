@@ -13,12 +13,20 @@ CHEAP:<input type="checkbox" id="cheap" onclick="check(this.id)" name="CHEAP">
         let good = document.getElementById('good');
         let fast = document.getElementById('fast');
         let cheap = document.getElementById('cheap');
-        if (good.checked && fast.checked)
-            cheap.checked= false;
-        if (!good.checked && fast.checked)
-            cheap.checked = true;
-        if (good.checked && !fast.checked)
-            cheap.checked = true;
+        switch (val){
+            case "good":
+                if (good.checked && fast.checked)
+                    cheap.checked= false;
+                break;
+            case "fast":
+                if (cheap.checked && fast.checked)
+                    good.checked= false;
+                break;
+            case "cheap":
+                if (good.checked && cheap.checked)
+                    fast.checked= false;
+                break;
+        }
     }
 </script>
 </body>
