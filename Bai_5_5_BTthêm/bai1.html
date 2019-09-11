@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Black Red</title>
+</head>
+<body>
+<button onclick="createArray()">Xáo bài</button><br>
+<div id="demo1"></div>
+<button onclick="shuffle()">Chia bài</button><br>
+<div id="demo2"></div>
+<div id="demo3"></div>
+<button onclick="comPare()">Kết quả</button>
+<div id="demo4"></div>
+<script>
+    let arr = [];
+    let j, x, i;
+    let playerOne = [];
+    let dem1 = 0;
+    let dem2 = 0;
+    let playerTwo = [];
+
+    function createArray() {
+        for (let i = 0; i < 52; i++) {
+            arr[i] = i + 1;
+            arr.push();
+    }
+
+        for (i = arr.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = arr[i];
+            arr[i] = arr[j];
+            arr[j] = x;
+        }
+        document.getElementById('demo1').innerHTML = arr;
+    }
+
+    function shuffle() {
+        for (let i = 0; i < arr.length - 1; i++) {
+            playerOne.push(arr[0]);
+            arr.shift();
+        }
+        playerTwo = arr;
+        document.getElementById('demo2').innerHTML = playerOne;
+        document.getElementById('demo3').innerHTML = playerTwo;
+    }
+
+    function comPare() {
+        for (i = 0; i < playerOne.length; i++) {
+            if (playerOne[i] > playerTwo[i]) {
+                dem1++;
+            } else {
+                dem2++;
+            }
+        }
+
+        if (dem1 > dem2) {
+            document.getElementById('demo4').innerHTML = 'Nguoi choi 1 win!';
+        } else if (dem1 < dem2) {
+            document.getElementById('demo4').innerHTML = 'Nguoi choi 2 win!';
+        } else
+            document.getElementById('demo4').innerHTML = '2 Nguoi bang nhau!';
+    }
+
+</script>
+</body>
+</html>
