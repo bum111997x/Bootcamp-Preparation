@@ -2,9 +2,172 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Luyen tap mảng 1</title>
 </head>
 <body>
-$END$
+<fieldset>
+    <button onclick="check1()">CLICK ME 1</button>
+    <div id="display"></div>
+</fieldset>
+<br>
+<fieldset>
+    <button onclick="check2()">CLICK ME 2</button>
+    <div id="display1"></div>
+    <div id="displayI"></div>
+</fieldset>
+<br>
+<fieldset>
+    <button onclick="check3()">CLICK ME 3</button>
+    <div id="display2"></div>
+    <div id="displayII"></div>
+</fieldset>
+<br>
+<fieldset>
+    <button onclick="check4()">CLICK ME 4</button>
+    <div id="displayIII"></div>
+    <div id="display3"></div>
+</fieldset>
+<br>
+<fieldset>
+    <button onclick="check5()">CLICK ME 5</button>
+    <div id="display4"></div>
+</fieldset>
+<br>
+<fieldset>
+    <button onclick="check6()">CLICK ME 6</button>
+    <div id="display5"></div>
+</fieldset>
+<br>
+<fieldset>
+    <button onclick="check7()">CLICK ME 7</button>
+    <div id="display6"></div>
+</fieldset>
+<br>
+<fieldset>
+    <button onclick="check8()">CLICK ME 8</button>
+    <div id="display7"></div>
+    <div id="demo7"></div>
+</fieldset>
+<script>
+    function check1() {
+        let array = [1, 12, 10, 5, 6, 9, 21, 65, 3, 100];
+        let result = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] >= 10) {
+                result = result + array[i] + " ";
+                document.getElementById('display').innerHTML = result;
+            }
+        }
+    }
+
+    function check2() {
+        let array = [1, 12, 10, 5, 6, 9, 21, 65, 3, 100];
+        let max = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (max < array[i]) {
+                max = array[i];
+                document.getElementById('displayI').innerHTML = `Vị trí của số lớn nhất trong mảng là: ${i}`;
+            }
+        }
+        document.getElementById('display1').innerHTML = `Số lớn nhất trong mảng là: ${max}`;
+    }
+
+    function check3() {
+        let array = [1, 12, 10, 5, 6, 9, 21, 65, 3, 100];
+        let total = 0;
+        let max = 0;
+        for (let i = 0; i < array.length; i++) {
+            total = total + array[i];
+            if (max < array[i]) {
+                max = array[i];
+            }
+        }
+        let medium = total / array.length;
+        document.getElementById('display2').innerHTML = `Số lớn nhất trong mảng là: ${max}`;
+        document.getElementById('displayII').innerHTML = `Giá trị trung bình của mảng là: ${medium}`;
+    }
+
+    function check4() {
+        let array = [];
+        for (let i = 0; i < 10; i++) {
+            let inp = parseInt(prompt('Nhap so nguyen'));
+            array.push(inp);
+        }
+        let reverse = [];
+        for (let i = 0, j = array.length - 1; i < array.length; i++, j--) {
+            reverse[j] = array[i];
+        }
+        document.getElementById('displayIII').innerHTML = array;
+        document.getElementById('display3').innerHTML = reverse;
+    }
+
+    function check5() {
+        let count = 0;
+        let array = [1, 2, 3, 5, 6, 8, 4, -6, -7, -9, -66, -523, -859, 9865456];
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] < 0)
+                count++;
+        }
+        document.getElementById('display4').innerHTML = count;
+    }
+
+    function check6() {
+        let array = [];
+
+        for (let i = 0; i < 10; i++) {
+            let inp = parseInt(prompt('Nhap so nguyen'));
+            array.push(inp);
+        }
+        let v = parseInt(prompt('Nhap V'));
+        for (let j = 0; j < array.length; j++) {
+            if (v === array[j]) {
+                document.getElementById('display5').innerHTML = `Có ${v} trong dãy ${array}`;
+                break;
+            } else {
+                document.getElementById('display5').innerHTML = `Không có ${v} trong dãy ${array}`;
+            }
+        }
+    }
+
+    function check7() {
+        let array = [];
+        for (let i = 0; i < 10; i++) {
+            let inp = parseInt(prompt('Nhap so nguyen'));
+            array.push(inp);
+        }
+        let v = parseInt(prompt('Nhap V'));
+        for (let j = 0; j < array.length - 1; j++) {
+            if (v === array[j]) {
+                let middle = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = middle;
+            } else {
+                document.getElementById('display6').innerHTML = `Không có ${v} trong dãy ${array}`;
+            }
+        }
+        array.pop();
+        // array.push(0);
+        document.getElementById('display6').innerHTML = array;
+    }
+
+    function check8() {
+        let arr = [];
+        for (let i = 0; i < 10; i++) {
+            let inp = parseInt(prompt('Nhap so nguyen'));
+            arr.push(inp);
+        }
+        let min = 0;
+        for (let i = 0; i < arr.length - 1; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    min = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = min;
+                }
+            }
+        }
+        document.getElementById('display7').innerHTML = arr;
+    }
+</script>
 </body>
 </html>
