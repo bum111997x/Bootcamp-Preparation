@@ -5,29 +5,34 @@
     <title>Tim so nguyen to</title>
 </head>
 <body>
+<input id="inpNumber" type="text">
+<button onclick="abc()">CLick Me</button>
+<p id="display"></p>
+<p id="display_1"></p>
 <script>
-    let numberCount = parseInt(document.getElementById('inpNumber').value);
-    let count = 0;
+    function abc() {
+        let numberCount = document.getElementById('inpNumber').value;
+        numberCount = parseInt(numberCount);
 
-    function findPrime(val) {
-        if (val < 2) {
-            return false;
-        } else if (val === 2) {
+        function findPrime(val) {
+            if(val<2){return false;}
+            else if (val >= 2) {
+                for (let i = 2; i < val; i++) {
+                    if (val % i == 0) {
+                        return false;
+                    }
+                }
+            }
             return true;
-        } else if (val > 2) {
-            for (let i = 2; i < numberCount - 1; i++) {
-                if (val % 2 == 0)
-                    return false;
+        }
+
+        let number = 0;
+        for (let count = 1; count < numberCount; count++) {
+            if (findPrime(count)) {
+                document.write(count+ " ");
+                number++;
             }
         }
-        return true;
-    }
-
-    for (let number = 2;count < numberCount;count++){
-        if (findPrime(number)){
-            document.getElementById('display').innerHTML = `Số nguyên tố nhỏ hơn 1000 là ${number} `;
-        }
-        number++;
     }
 </script>
 </body>
