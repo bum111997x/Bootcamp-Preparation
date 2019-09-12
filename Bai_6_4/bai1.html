@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>[Bài tập] Chuyển đổi giữa feet và meters</title>
 </head>
 <body>
-$END$
+<input type="text" id="inptNumber" placeholder="Feet to Meter">
+<button onclick="feetToMeter()">Change</button>
+<div id="display1"></div>
+<br>
+<input type="text" id="inptNumber1" placeholder="Meter to Feet">
+<button onclick="meterToFeet()">Change</button>
+<div id="display2"></div>
+<script>
+    function feetToMeter() {
+        let feet = parseFloat(document.getElementById('inptNumber').value);
+        meter = 0.305 * feet;
+        document.getElementById('display1').innerHTML = meter+" meter";
+    }
+
+    function meterToFeet() {
+        let meter = parseFloat(document.getElementById('inptNumber1').value);
+        feet = 3.279 * meter;
+        document.getElementById('display2').innerHTML = feet +" feet";
+    }
+</script>
 </body>
 </html>
