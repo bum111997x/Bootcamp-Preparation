@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<button onclick="findZodiac()">Click Me</button>
+<pre id="display"></pre>
+<script>
+    let superStar = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let zodiac = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let search = prompt("Nhap ten ngoi sao");
+
+    function findZodiac() {
+        for (let i = 0; i < superStar.length - 1; i++) {
+            if (search === superStar[i]) {
+                document.getElementById('display').innerHTML = zodiac[i];
+                break;
+            } else {
+                document.getElementById('display').innerHTML = " Khong tim thay ten ngoi sao";
+            }
+        }
+    }
+</script>
 </body>
 </html>
