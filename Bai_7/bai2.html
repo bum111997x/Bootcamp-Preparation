@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let circle = function(radius) {
+        this.radius = radius;
+        this.getRadius = function () {
+            return radius;
+        },
+        this.getArea = function () {
+            return Math.PI * radius * radius;
+        },
+        this.setRadius = function () {
+            this.radius = radius;
+        }
+    };
+    let Circle = new circle();
+    Circle.setRadius(4) ;
+    alert(Circle.getArea());
+
+</script>
 </body>
 </html>
