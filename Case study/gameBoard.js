@@ -8,21 +8,21 @@ function createEnemy() {
         let enemy = new EnemyPlane(1, this.x, -20);
         enemies.push(enemy);
     }
-    for (let i = 0; i < enemies.length; i++) {
-        if (enemies[i].y < 500) {
-            enemies[i].move();
-            enemies[i].draw();
-        } else {
-            enemies[i].y = 0;
-        }
-    }
+    // for (let i = 0; i < enemies.length; i++) {
+    //     if (enemies[i].y < 500) {
+    //         enemies[i].move();
+    //         enemies[i].draw();
+    //     } else {
+    //         enemies[i].y = 0;
+    //     }
+    // }
 }
 
 function createBullet() {
-    let bullet = new Bullet(1, player.x + 25, 435);
+    let bullet = new Bullet(5, player.x + 25, 435);
     bulletes.push(bullet);
     for (let i = 0; i < bulletes.length; i++) {
-        if (i % 10 === 0) {
+        if (i % 20 === 0) {
             if (bulletes[i].y > 0) {
                 bulletes[i].move();
                 bulletes[i].drawBullet();
@@ -31,7 +31,7 @@ function createBullet() {
     }
 }
 
-// function showEnermy() {
+// function showEnemy() {
 //     for (let i = 0; i < enemies.length; i++) {
 //         if (enemies[i].y >= 500) {
 //             enemies.splice(i, 1);
@@ -53,21 +53,12 @@ function createBullet() {
                 player.moveLeft();
                 clearScreen();
                 player.drawPlane();
-                for (let i = 0; i < bulletes.length; i++) {
-                    if (bulletes[i].y > 0) {
-                        bulletes[i].moveLeft();
-                    }
-                }
+
                 break;
             case 39:
                 player.moveRight();
                 clearScreen();
                 player.drawPlane();
-                for (let i = 0; i < bulletes.length; i++) {
-                    if (bulletes[i].y > 0) {
-                        bulletes[i].moveRight();
-                    }
-                }
                 break;
         }
     }
@@ -79,10 +70,11 @@ function createBullet() {
     function main() {
         clearScreen();
         createEnemy();
-        // showEnermy();
         createBullet();
+        // showEnemy();
         player.drawPlane();
         control(player);
+
         requestAnimationFrame(main);
     }
 
