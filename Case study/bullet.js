@@ -13,18 +13,6 @@ let Bullet = function (speed, x, y) {
         return this.y;
     };
 
-    this.moveLeft = function () {
-        if (this.x > 25) {
-            this.x -= 5;
-        }
-    };
-
-    this.moveRight = function () {
-        if (this.x < 375) {
-            this.x += 5;
-        }
-    };
-
     this.move = function () {
         this.y -= this.speed;
     };
