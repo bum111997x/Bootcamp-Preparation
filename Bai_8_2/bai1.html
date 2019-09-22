@@ -2,9 +2,109 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<fieldset>
+    <h4>Adam</h4>
+    <button onclick="eatapple(adam)">Eat Apple</button>
+    <div id="displayadam"></div>
+</fieldset>
+<br>
+<div id="showApple"></div>
+<br>
+<fieldset>
+    <h4>Eva</h4>
+    <button onclick="eatapple(eva)">Eat Apple</button>
+    <div id="displayeva"></div>
+</fieldset>
+<script>
+    let Apple = function (weight) {
+        this.weight = weight;
+
+        this.decrease = function () {
+            this.weight--;
+        };
+
+        this.getWeight = function () {
+            return this.weight;
+        };
+
+        this.setWeight = function (value) {
+            this.weight = value;
+        }
+    };
+
+    let Human = function (name, gender, _weight, say) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = _weight;
+        this.say = "";
+
+        this.getSay = function () {
+            return this.say;
+        };
+
+        this.setSay = function (value) {
+            this.say = value;
+        };
+
+        this.getGender = function () {
+            return this.gender;
+        };
+
+        this.setGender = function (value) {
+            this.gender = value;
+        };
+
+        this.checkApple = function (apple) {
+            this.apple.getWeight();
+        };
+
+        this.eatApple = function () {
+            this.weight++;
+        };
+
+        this.getWeight = function () {
+            return this.weight;
+        };
+
+        this.setWeight = function (value) {
+            this.weight = value;
+        };
+
+        this.setName = function (value) {
+            this.name = value;
+        };
+
+        this.getName = function () {
+            return this.name;
+        }
+    };
+
+    let adam = new Human("Adam", "Male", 70, "I'm Adam!");
+    let eva = new Human("Eva", "Female", 55, "I'm Eva");
+    let apple = new Apple(10);
+
+    // display();
+
+    function eatapple(name) {
+        if (apple.getWeight() > 0) {
+            apple.decrease();
+            name.eatApple();
+            console.log(name.getWeight())
+        } else
+            alert("Da an het tao!");
+    }
+
+    function display() {
+        document.getElementById('showApple').innerHTML = `So tao con lai la: ${apple.getWeight()}`;
+        document.getElementById('displayadam').innerHTML = `Can nang cua Adam la : ${adam.getWeight}`;
+        document.getElementById('displayeva').innerHTML = `Can nang cua Eva la: ${eva.getWeight}`;
+    }
+
+    // display();
+
+</script>
 </body>
 </html>
