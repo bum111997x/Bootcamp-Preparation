@@ -1,9 +1,9 @@
 let EnemyPlane = function (speed, x, y) {
     let ctx = document.getElementById('Canvas').getContext("2d");
     this.speed = speed;
-    this.x = Math.floor(Math.random()*350)+30;
+    this.x = x;
     this.y = y;
-    this.size =25;
+    this.size =10;
 
     this.move = function () {
         return this.y += this.speed;
